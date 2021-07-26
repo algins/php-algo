@@ -1,1 +1,1 @@
-{"version":1,"defects":[],"times":{"Algo\\Tests\\FunctionsTest::testBinarySearch":0.01}}
+{"version":1,"defects":{"Algo\\Tests\\FunctionsTest::testBinarySearch":3,"Algo\\Tests\\FunctionsTest::testSearch":4},"times":{"Algo\\Tests\\FunctionsTest::testBinarySearch":0,"Algo\\Tests\\FunctionsTest::testSearch":0.002}}
