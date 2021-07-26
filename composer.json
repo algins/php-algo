@@ -1,0 +1,19 @@
+{
+    "name": "algins/php-algo",
+    "description": "Popular algorithms in PHP",
+    "license": "MIT",
+    "autoload": {
+        "files": [
+            "src/Functions.php"
+        ]
+    },
+    "bin": [
+        "bin/php-algo"
+    ],
+    "require": {},
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.6",
+        "phpunit/phpunit": "^9.5",
+        "phpstan/phpstan": "^0.12.93"
+    }
+}
