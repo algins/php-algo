@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Functions;
+namespace App\Search;
 
-function search(array $list, $item): ?int
+function linear(array $list, $item): ?int
 {
     for ($i = 0; $i < count($list); $i += 1) {
         if ($list[$i] === $item) {
@@ -13,7 +13,7 @@ function search(array $list, $item): ?int
     return null;
 }
 
-function binarySearch(array $list, $item): ?int
+function binary(array $list, $item): ?int
 {
     $low = 0;
     $high = count($list) - 1;
