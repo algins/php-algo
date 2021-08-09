@@ -11,7 +11,7 @@ use function cli\prompt;
 
 function handle(): void
 {
-    $searchAlgorithms = [
+    $choices = [
         'linear' => fn ($list, $item) => linear($list, $item),
         'binary' => fn ($list, $item) => binary($list, $item),
     ];
@@ -23,20 +23,37 @@ function handle(): void
     ];
 
     while (true) {
-        $algorithm = menu($menu, null, 'Choose an algorithm');
+        $choice = menu($menu, null, 'Choose an algorithm');
         line();
 
-        if ($algorithm === 'quit') {
+        if ($choice === 'quit') {
             break;
         }
 
-        $size = prompt('Enter list size');
+        $listSize = prompt('Enter list size');
         line();
-        $list = range(0, $size);
-        $item = prompt('Enter value to search');
+
+        $list = range(0, $listSize);
+        $randomItem = $list[array_rand($list)];
         line();
-        $result = $searchAlgorithms[$algorithm]($list, (int) $item);
-        line("Result: {$result}");
-        break;
+
+        $attempts = 10;
+        $executionTimes = [];
+
+        for ($i = 1; $i <= $attempts; $i += 1) {
+            $start = microtime(true);
+            $result = search($list, $randomItem, $choices[$choice]);
+            $end = microtime(true);
+            $executionTimes[] = $end - $start;
+        }
+
+        $averageExecutionTime = round(array_sum($executionTimes) / $attempts, 5);
+
+        line("Average execution time: {$averageExecutionTime}");
     }
+}
+
+function search(array $list, int $item, callable $fn)
+{
+    return $fn($list, $item);
 }
