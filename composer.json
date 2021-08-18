@@ -5,7 +5,8 @@
     "autoload": {
         "files": [
             "src/Cli.php",
-            "src/Search.php"
+            "src/Search.php",
+            "src/Sort.php"
         ]
     },
     "bin": [

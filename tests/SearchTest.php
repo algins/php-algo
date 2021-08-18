@@ -8,7 +8,7 @@ use function App\Search\binary;
 
 class SearchTest extends TestCase
 {
-    private $list;
+    private array $list;
 
     public function setUp(): void
     {

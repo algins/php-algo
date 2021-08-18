@@ -2,6 +2,32 @@
 
 namespace App\Sort;
 
+function quick(array $list): array
+{
+    if (count($list) < 2) {
+        return $list;
+    }
+
+    $pivot = $list[0];
+    $less = [];
+    $greater = [];
+
+    for ($i = 1; $i < count($list); $i += 1) {
+        $current = $list[$i];
+        if ($current <= $pivot) {
+            $less[] = $current;
+        } else {
+            $greater[] = $current;
+        }
+    }
+
+    return [
+        ...quick($less),
+        $pivot,
+        ...quick($greater),
+    ];
+}
+
 function selection(array $list): array
 {
     if (empty($list)) {
