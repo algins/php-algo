@@ -3,6 +3,7 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
+
 use function App\Sort\quick;
 use function App\Sort\selection;
 

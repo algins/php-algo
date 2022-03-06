@@ -10,6 +10,7 @@
     processIsolation="false"
     stopOnFailure="true"
     bootstrap="vendor/autoload.php"
+    cacheResult ="false"
     xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd"
 >
   <coverage includeUncoveredFiles="true">
