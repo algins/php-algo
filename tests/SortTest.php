@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests;
+namespace Algins\PHPAlgo\Tests;
 
 use PHPUnit\Framework\TestCase;
 
-use function App\Sort\quick;
-use function App\Sort\selection;
+use function Algins\PHPAlgo\Sort\quick;
+use function Algins\PHPAlgo\Sort\selection;
 
 class SortTest extends TestCase
 {

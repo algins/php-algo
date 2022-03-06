@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Search;
+namespace Algins\PHPAlgo\Search;
 
 function linear(array $list, $item): ?int
 {

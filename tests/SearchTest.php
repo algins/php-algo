@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests;
+namespace Algins\PHPAlgo\Tests;
 
 use PHPUnit\Framework\TestCase;
 
-use function App\Search\linear;
-use function App\Search\binary;
+use function Algins\PHPAlgo\Search\linear;
+use function Algins\PHPAlgo\Search\binary;
 
 class SearchTest extends TestCase
 {

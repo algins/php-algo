@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Sort;
+namespace Algins\PHPAlgo\Sort;
 
 function quick(array $list): array
 {
