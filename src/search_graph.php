@@ -2,23 +2,26 @@
 
 namespace Algins\PHPAlgo\SearchGraph;
 
-function breadthFirst(array $graph, string $key, string $searchKey): ?array
+/**
+ * Find node that satisfies condition
+ */
+function breadthFirst(array $graph, string $node, callable $cb): ?array
 {
     if (empty($graph)) {
         return null;
     }
 
-    $searchQueue = $graph[$key];
+    $searchQueue = $graph[$node];
     $searched = [];
 
     while (!empty($searchQueue)) {
-        $currentKey = array_shift($searchQueue);
-        if (!in_array($currentKey, $searched)) {
-            if ($currentKey === $searchKey) {
-                return $graph[$currentKey];
+        $currentNode = array_shift($searchQueue);
+        if (!in_array($currentNode, $searched)) {
+            if ($cb($currentNode)) {
+                return $graph[$currentNode];
             } else {
-                $searchQueue = [...$searchQueue, ...$graph[$currentKey]];
-                $searched[] = $currentKey;
+                $searchQueue = [...$searchQueue, ...$graph[$currentNode]];
+                $searched[] = $currentNode;
             }
         }
     }

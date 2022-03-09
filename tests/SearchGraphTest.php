@@ -29,9 +29,9 @@ class SearchGraphTest extends TestCase
     {
         $graph = array_map(fn($item) => array_keys($item), $this->graph);
 
-        $this->assertEquals(['h'], breadthFirst($graph, 'a', 'g'));
-        $this->assertNull(breadthFirst([], 'a', 'g'));
-        $this->assertNull(breadthFirst($graph, 'a', 'i'));
+        $this->assertEquals(['h'], breadthFirst($graph, 'a', fn($node) => $node === 'g'));
+        $this->assertNull(breadthFirst([], 'a', fn($node) => $node === 'g'));
+        $this->assertNull(breadthFirst($graph, 'a', fn($node) => $node === 'x'));
     }
 
     public function testDijkstras(): void
